@@ -1,0 +1,14 @@
+@layout('layouts/app')
+
+@section('content')
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hello, {{ auth.user.first_name }}!</h1>
+      <h3>This is a simple starter kit for Fullstack Adonis Apps.</h3>
+      <p><a class="btn btn-primary btn-lg" href="https://adonisjs.com/" target="_blank" role="button">Learn more about AdonisJS &raquo;</a></p>
+    </div>
+  </div>
+  
+
+@endsection

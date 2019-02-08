@@ -1,0 +1,32 @@
+@layout('layouts/auth')
+
+@section('content')
+
+  <h1 class="text-center login-title">LOGIN</h1>
+  <form class="form-signin" id="login-form" method="POST" action="{{ route('auth.login') }}">
+
+    {{ csrfField() }}
+
+      <label type="email">Email</label>
+      <input type="email" class="form-control" required id="email" name="email"></input>
+
+      <label type="password">Password</label>
+      <input type="password" class="form-control" required id="password" name="password"></input>
+
+      <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"></input>
+
+      <br>
+      <a href="{{ route('forgot') }}" class="lead">Forgot Password? </a>
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <hr>
+          <a href="{{ route('signup') }}" class="btn btn-success">Sign Up</a>
+          <a href="{{ route('resend') }}" class="btn btn-dark">Resend Confirmation</a>
+        </div>
+      </div>
+
+  </form>
+  
+
+@endsection
