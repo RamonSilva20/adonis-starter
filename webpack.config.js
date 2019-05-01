@@ -1,6 +1,7 @@
 var path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const plugins = [
     new MiniCssExtractPlugin({
@@ -16,22 +17,34 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'main.js',
-        publicPath: path.resolve(__dirname, 'public')
     },
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                    compress: false,
-                    ecma: 6,
-                    mangle: true
+            new TerserPlugin({
+                terserOptions: {
+                    ecma: undefined,
+                    warnings: false,
+                    parse: {},
+                    compress: {},
+                    mangle: true,
+                    module: false,
+                    output: null,
+                    toplevel: false,
+                    nameCache: null,
+                    ie8: false,
+                    keep_classnames: undefined,
+                    keep_fnames: false,
+                    safari10: false,
                 },
-                sourceMap: true,
-                extractComments: true,
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorPluginOptions: {
+                    preset: ['default', {
+                        discardComments: { removeAll: true },
+                    }],
+                },
             })
-        ]
+        ],
     },
     devtool: 'source-map',
     module: {

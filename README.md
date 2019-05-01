@@ -3,6 +3,7 @@
 This is a boilerplate for Fullstack AdonisJS Apps
 
 ![Adonis Starter](https://raw.githubusercontent.com/RamonSilva20/adonis-starter/master/prints/login.png)
+![Adonis Starter](https://raw.githubusercontent.com/RamonSilva20/adonis-starter/master/prints/dashboard.png)
 
 
 
@@ -29,6 +30,10 @@ Run the following command to run startup migrations.
 adonis migration:run
 ```
 
+```js
+adonis seed
+```
+
 ### Running
 
 Start the app locally
@@ -37,4 +42,7 @@ Start the app locally
 adonis serve
 ```
 
+### Accessing
 
+User: admin@admin.com
+Password: 123456

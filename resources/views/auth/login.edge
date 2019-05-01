@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1 class="text-center login-title">LOGIN</h1>
+  <h4 class="text-center login-title">LOGIN</h4>
   <form class="form-signin" id="login-form" method="POST" action="{{ route('auth.login') }}">
 
     {{ csrfField() }}
@@ -12,7 +12,8 @@
 
       <label type="password">Password</label>
       <input type="password" class="form-control" required id="password" name="password"></input>
-
+      <br>
+      
       <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"></input>
 
       <br>
