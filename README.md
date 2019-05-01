@@ -2,7 +2,7 @@
 
 This is a boilerplate for Fullstack AdonisJS Apps
 
-![Adonis Starter](https://raw.githubusercontent.com/RamonSilva20/adonis-starter/master/prints/login.png)
+![Adonis Starter](https://raw.githubusercontent.com/RamonSilva20/adonis-starter/master/prints/auth.png)
 ![Adonis Starter](https://raw.githubusercontent.com/RamonSilva20/adonis-starter/master/prints/dashboard.png)
 
 
